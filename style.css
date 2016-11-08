@@ -1,0 +1,62 @@
+.game {
+  margin: 30px 0;
+  display: flex;
+}
+
+.grid {
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+
+.grid__row:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.grid__cell {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.grid__cell:hover {
+  background-color: #bbb;
+}
+
+.grid__cell--hit, .grid__cell--missed {
+  cursor: default;
+}
+
+.grid__cell--occupied {
+  background-color: #008080;
+}
+
+.grid__cell--hit {
+  background-color: #e25822 !important;
+}
+
+.grid__cell--missed {
+  background-color: #d0d0d0;
+}
+
+.grid__cell:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+
+.log {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #333;
+  border: 1px solid #333;
+  margin: 0 0 0 30px;
+  padding: 10px;
+  min-width: 150px;
+  height: 411px; /* 10 cells + borders */
+}
+
+.log__lines {
+  overflow-y: scroll;
+  flex: 1;
+}

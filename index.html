@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Battleship game</title>
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      // initialize a namespace so that we can export our classes without
+      // polluting the global namespace. We only add 1 global var to window.
+      // We can avoid this by using import/export, and there is no need of
+      // namespaces but it would need a bundler like webpack
+      window.battleship = {}
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Battleship Game</h1>
+      <section>
+        <h3>Enter coordinates to shoot (eg. A5) or click on the grid.</h3>
+        <form class='shot-form'>
+          <input class='shot-form__input' maxlength='2' />
+          <button>Shoot!</button>
+          <div class='shoot-form__error' />
+        </form>
+      </section>
+
+      <div class='game'>
+      </div>
+    </div>
+    <script src='Ship.js?v=1'></script>
+    <script src='Grid.js?v=1'></script>
+    <script src='Renderer.js?v=1'></script>
+    <script src='index.js?v=1'></script>
+  </body>
+</html>
