@@ -18,6 +18,7 @@ body {
 }
 
 .legend {
+  margin-top: 20px;
   display: flex;
 }
 
@@ -25,6 +26,7 @@ body {
   line-height: 40px;
   width: 80px; /* 2 cells */
   padding-left: 5px;
+  box-sizing: border-box;
 }
 
 .legend .grid__cell {
@@ -32,7 +34,6 @@ body {
 }
 
 .game {
-  margin: 30px 0;
   display: flex;
   align-items: flex-end;
 }
@@ -107,7 +108,7 @@ body {
 }
 
 .log__lines {
-  overflow-y: scroll;
+  overflow-y: auto;
   flex: 1;
   padding: 0 5px;
 }
