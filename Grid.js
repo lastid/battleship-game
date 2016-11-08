@@ -85,6 +85,18 @@
       return ships
     }
 
+    containsCell ({ row, col }) {
+      const size = this._size
+
+      return (row >= 0 && col >= 0) && (row < size && col < this._size)
+    }
+
+    didTakeShotAt (cell) {
+      return this._shots.some(
+          shot => shot.row === cell.row && shot.col === cell.col
+      )
+    }
+
     getCellTypeAt (cell) {
       for (let i = 0; i < this._ships.length; i++) {
         const ship = this._ships[i]
@@ -98,11 +110,7 @@
         }
       }
 
-      const isInShots = this._shots.some(
-          shot => shot.row === cell.row && shot.col === cell.col
-      )
-
-      if (isInShots) {
+      if (this.didTakeShotAt(cell)) {
         return Grid.CELL_MISSED
       }
 

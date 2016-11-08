@@ -34,25 +34,34 @@
         classNames.push('grid__cell--' + cellClassName)
       }
 
-      return `<span class='${classNames.join(' ')}' data-cell='${row},${col}'></span>`
+      return `<td class='${classNames.join(' ')}' data-cell='${row},${col}'></td>`
     }
 
     _renderRow (grid, row) {
+      const rowLabel = String.fromCharCode('A'.charCodeAt(0) + row)
+      const labelCell = `<th class='grid__row-label'>${rowLabel}</th>`
       const cells = [...Array(grid.getSize()).keys()].map(
           col => this._renderCell(grid, row, col)
       )
 
-      return `<div class='grid__row'>${cells.join('')}</div>`
+      return `<tr class='grid__row'>${labelCell}${cells.join('')}</tr>`
     }
 
     _renderGrid (grid) {
-      // create a range from 0 -> grid size and get html for each row
-      const rows = [...Array(grid.getSize()).keys()].map(
-          row => this._renderRow(grid, row)
+      const arrayNumbers = [...Array(grid.getSize()).keys()]
+      const emptyCell = "<th class='grid__col-label'></th>"
+      const headerRow = '<tr>' + emptyCell + arrayNumbers.map(
+          i => `<th class='grid__col-label'>${i + 1}</th>`
+      ).join('') + '</tr>'
+
+      const rows = arrayNumbers.map(
+          rowNumber => this._renderRow(grid, rowNumber)
       )
 
       return `
-        <div class='grid'>${rows.join('')}</div>
+        <div class='grid'>
+          <table class='grid__inner'>${headerRow}${rows.join('')}</table>
+        </div>
       `
     }
 
@@ -61,6 +70,7 @@
 
       this._el.innerHTML = content
 
+      // scroll log panel to the bottom aka lastest events
       const logLinesEl = document.querySelector('.log__lines')
       logLinesEl.scrollTop = logLinesEl.scrollHeight
     }
