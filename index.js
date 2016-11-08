@@ -1,5 +1,5 @@
 {
-  const { Ship, Grid, Renderer } = window.battleship
+  const { Ship, GridGenerator, Renderer } = window.battleship
   const GRID_SIZE = 10
   const ALLOWED_SHIPS = [
     Ship.TYPE_BATTLESHIP, Ship.TYPE_DESTROYER, Ship.TYPE_DESTROYER
@@ -48,7 +48,7 @@
     }
   }
 
-  const grid = new Grid(GRID_SIZE, ALLOWED_SHIPS)
+  const grid = GridGenerator.generate(GRID_SIZE, ALLOWED_SHIPS)
   const log = []
 
   const gameEl = document.querySelector('.game')
