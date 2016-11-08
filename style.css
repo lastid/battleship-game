@@ -8,6 +8,20 @@ body {
   margin-left: 40px;
 }
 
+.legend {
+  display: flex;
+}
+
+.legend__cell {
+  line-height: 40px;
+  width: 80px; /* 2 cells */
+  padding-left: 5px;
+}
+
+.legend .grid__cell {
+  border: 0;
+}
+
 .game {
   margin: 30px 0;
   display: flex;
@@ -54,19 +68,21 @@ body {
   background-color: #bbb;
 }
 
-.grid__cell--hit, .grid__cell--missed {
+.grid__cell--hit, .grid__cell--miss {
   cursor: default;
 }
 
 .grid__cell--occupied {
   background-color: #008080;
+  border: 0;
 }
 
 .grid__cell--hit {
   background-color: #e25822 !important;
+  border: 0;
 }
 
-.grid__cell--missed {
+.grid__cell--miss {
   background-color: #d0d0d0;
 }
 

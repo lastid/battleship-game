@@ -24,7 +24,7 @@
       const cellType = grid.getCellTypeAt({ row, col })
       const cellClassMap = {
         [Grid.CELL_EMPTY]: '',
-        [Grid.CELL_MISSED]: 'missed',
+        [Grid.CELL_MISSED]: 'miss',
         [Grid.CELL_OCCUPIED]: 'occupied',
         [Grid.CELL_HIT]: 'hit'
       }
