@@ -38,7 +38,7 @@
         log.push(`${pad} Ship sunk: ${shipName}`)
       }
 
-      if (grid.countRemainingShips() === 0) {
+      if (grid.isOver()) {
         log.push(`${pad} No ships left`)
         log.push('<hr/>')
         log.push('<center>THE END</center>')
@@ -53,8 +53,13 @@
 
   const gameEl = document.querySelector('.game')
   const formEl = document.querySelector('form')
+
   formEl.addEventListener('submit', e => {
     e.preventDefault()
+
+    if (grid.isOver()) {
+      return
+    }
 
     const inputValue = formEl.querySelector('input').value.trim().toUpperCase()
     const cell = convertToCell(inputValue)
@@ -71,7 +76,7 @@
   gameEl.addEventListener('click', e => {
     const target = e.target
 
-    if (target.classList.contains('grid__cell')) {
+    if (!grid.isOver() && target.classList.contains('grid__cell')) {
       const cellData = target.getAttribute('data-cell')
       const [row, col] = cellData.split(',').map(Number)
       const cell = { row, col }

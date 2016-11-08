@@ -134,12 +134,10 @@
       return null
     }
 
-    countSunkenShips () {
-      return this._ships.filter(ship => ship.isSunken()).length
-    }
+    isOver () {
+      const ships = this._ships
 
-    countRemainingShips () {
-      return this._ships.length - this.countSunkenShips()
+      return ships.filter(ship => ship.isSunken()).length === ships.length
     }
   }
 
