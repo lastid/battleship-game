@@ -4,19 +4,10 @@
       this._size = size
       this._ships = ships
       this._shots = []
-      this._cheating = false
     }
 
     getSize () {
       return this._size
-    }
-
-    isCheating () {
-      return this._cheating
-    }
-
-    setCheating (cheating) {
-      this._cheating = cheating
     }
 
     containsCell ({ row, col }) {
