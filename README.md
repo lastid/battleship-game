@@ -6,7 +6,7 @@
 
 ### The assumptions ###
 The test description is not very clear. So here is my interpretation for ambiguous sentences.
-- **One-sided Battleship game**: There is no official description of "One-sided Battleship game". I assumed that I need to show only one grid with ships visible.
+- **One-sided Battleship game**: There is no official description of "One-sided Battleship game". I assumed that I need to show only one grid, and players can see ships if they want to.
 - **The application should take input of the form "A5"**: It's easier to use a mouse to choose a square to shoot at. But as it states we can target a square with "input" as a string, so I create an input box to enter coordinates.
 
 I would remove the input box, the game would look better.
