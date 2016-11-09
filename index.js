@@ -12,7 +12,7 @@
   const convertToCell = (coordinates) => {
     return {
       row: coordinates.charCodeAt(0) - LETTER_A_CODE,
-      col: parseInt(coordinates.charAt(1), 10) - 1
+      col: parseInt(coordinates.substring(1), 10) - 1
     }
   }
 

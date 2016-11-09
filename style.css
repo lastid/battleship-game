@@ -46,6 +46,10 @@ body {
   display: block;
 }
 
+.game-over section {
+  display: none;
+}
+
 .grid__inner {
   border-spacing: 0;
 }
