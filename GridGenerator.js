@@ -73,6 +73,8 @@
     }
   }
 
+  GridGenerator.random = random
+
   // export
   window.battleship.GridGenerator = GridGenerator
 }

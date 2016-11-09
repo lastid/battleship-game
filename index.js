@@ -40,6 +40,8 @@
         log.push(`${pad} No ships left`)
         log.push('<hr/>')
         log.push('<center>THE END</center>')
+
+        document.body.classList.add('game-over')
       }
     } else {
       log.push(pad + ' MISS')
@@ -49,12 +51,12 @@
   const addListeners = (gameEl, formEl) => {
     formEl.addEventListener('submit', e => {
       e.preventDefault()
+      const coordinates = formEl.querySelector('input').value.trim().toUpperCase()
 
-      if (grid.isOver()) {
+      if (grid.isOver() || !coordinates) {
         return
       }
 
-      const coordinates = formEl.querySelector('input').value.trim().toUpperCase()
       const cell = convertToCell(coordinates)
 
       if (grid.containsCell(cell)) {
@@ -77,6 +79,23 @@
         shootAtGrid(cell)
         renderer.render(grid, log)
       }
+    })
+
+    const autoShootBtn = document.querySelector('.auto-shoot')
+    autoShootBtn.addEventListener('click', e => {
+      let i = 0
+      let cell
+
+      while (i < 1000 && !grid.isOver()) {
+        cell = {
+          row: GridGenerator.random(0, 9),
+          col: GridGenerator.random(0, 9)
+        }
+        shootAtGrid(cell)
+        i++
+      }
+
+      renderer.render(grid, log)
     })
   }
 

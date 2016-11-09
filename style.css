@@ -33,6 +33,14 @@ body {
   border: 0;
 }
 
+.game-over__message {
+  display: none;
+}
+
+.game-over .game-over__message {
+  display: block;
+}
+
 .game {
   display: flex;
   align-items: flex-end;
