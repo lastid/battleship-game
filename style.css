@@ -12,7 +12,7 @@ body {
   text-transform: uppercase;
 }
 
-.shot-form__new-game {
+.shot-form__new-game, .shot-form__toggle-ships {
   text-decoration: none;
   margin-left: 15px;
 }
@@ -33,17 +33,17 @@ body {
   border: 0;
 }
 
+.game {
+  display: flex;
+  align-items: flex-end;
+}
+
 .game-over__message {
   display: none;
 }
 
 .game-over .game-over__message {
   display: block;
-}
-
-.game {
-  display: flex;
-  align-items: flex-end;
 }
 
 .grid__inner {

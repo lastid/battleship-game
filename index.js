@@ -80,6 +80,19 @@
         renderer.render(grid, log)
       }
     })
+
+    const toggleShipsLink = document.querySelector('.shot-form__toggle-ships')
+    toggleShipsLink.addEventListener('click', e => {
+      e.preventDefault()
+
+      if (grid.isOver()) {
+        return
+      }
+
+      grid.setCheating(!grid.isCheating())
+      toggleShipsLink.innerHTML = grid.isCheating() ? 'Hide ships' : 'Show ships'
+      renderer.render(grid, log)
+    })
   }
 
   const GRID_SIZE = 10

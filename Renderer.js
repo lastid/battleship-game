@@ -25,7 +25,7 @@
       const cellClassMap = {
         [Grid.CELL_EMPTY]: '',
         [Grid.CELL_MISSED]: 'miss',
-        [Grid.CELL_OCCUPIED]: 'occupied',
+        [Grid.CELL_OCCUPIED]: grid.isCheating() ? 'occupied' : '',
         [Grid.CELL_HIT]: 'hit'
       }
       const cellClassName = cellClassMap[cellType]
