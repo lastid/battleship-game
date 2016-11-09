@@ -31,6 +31,7 @@ body {
 
 .legend .grid__cell {
   border: 0;
+  cursor: default;
 }
 
 .game {
@@ -82,8 +83,16 @@ body {
   background-color: #fafafa;
 }
 
-.grid__cell:hover {
+.grid .grid__cell:hover {
   background-color: #bbb;
+}
+
+.game-over .grid__cell {
+  cursor: default;
+}
+
+.game-over .grid .grid__cell:hover{
+  background-color: inherit;
 }
 
 .grid__cell--hit, .grid__cell--miss {
@@ -101,7 +110,7 @@ body {
 }
 
 .grid__cell--miss {
-  background-color: #d0d0d0;
+  background-color: #d0d0d0 !important;
 }
 
 
