@@ -4,6 +4,15 @@
   class Renderer {
     constructor (el) {
       this._el = el
+      this._cheating = false
+    }
+
+    isCheating () {
+      return this._cheating
+    }
+
+    setCheating (cheating) {
+      this._cheating = cheating
     }
 
     _renderLog (log) {
@@ -25,7 +34,7 @@
       const cellClassMap = {
         [Grid.CELL_EMPTY]: '',
         [Grid.CELL_MISSED]: 'miss',
-        [Grid.CELL_OCCUPIED]: grid.isCheating() ? 'occupied' : '',
+        [Grid.CELL_OCCUPIED]: this.isCheating() ? 'occupied' : '',
         [Grid.CELL_HIT]: 'hit'
       }
       const cellClassName = cellClassMap[cellType]

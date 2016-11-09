@@ -88,12 +88,8 @@
     toggleShipsLink.addEventListener('click', e => {
       e.preventDefault()
 
-      if (grid.isOver()) {
-        return
-      }
-
-      grid.setCheating(!grid.isCheating())
-      toggleShipsLink.innerHTML = grid.isCheating() ? 'Hide ships' : 'Show ships'
+      renderer.setCheating(!renderer.isCheating())
+      toggleShipsLink.innerHTML = renderer.isCheating() ? 'Hide ships' : 'Show ships'
       renderer.render(grid, log)
     })
   }
