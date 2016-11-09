@@ -51,7 +51,9 @@
   const addListeners = (gameEl, formEl) => {
     formEl.addEventListener('submit', e => {
       e.preventDefault()
-      const coordinates = formEl.querySelector('input').value.trim().toUpperCase()
+
+      const inputEl = formEl.querySelector('input')
+      const coordinates = inputEl.value.trim().toUpperCase()
 
       if (grid.isOver() || !coordinates) {
         return
@@ -61,6 +63,7 @@
 
       if (grid.containsCell(cell)) {
         shootAtGrid(cell)
+        inputEl.value = ''
       } else {
         log.push('-- Invalid coordinates: ' + coordinates)
       }
