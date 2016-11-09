@@ -8,9 +8,8 @@
 The test description is not very clear. So here is my interpretation for ambiguous sentences.
 - **One-sided Battleship game**: There is no official description of "One-sided Battleship game". I assumed that I need to show only one grid with ships visible.
 - **The application should take input of the form "A5"**: It's easier to use a mouse to choose a square to shoot at. But as it states we can target a square with "input" as a string, so I create an input box to enter coordinates.
-- **Automated testing is highly recommended**: not sure "automated testing" here is programming tests (unit tests) or an easy way to test the game for players. So I added both, unit tests using Jasmine and a button "Shoot 1000 times" for players on the game ui.
 
-I would remove the input box and the "Shoot 1000 times" button, the game would look better.
+I would remove the input box, the game would look better.
 
 ### The solution ###
 - There is no restriction on how the game is made, on which platforms it should work, so I choose to make a webpage using ES6. In order to make the game work in all browsers, we just need to transpile the code using Babel.

@@ -80,23 +80,6 @@
         renderer.render(grid, log)
       }
     })
-
-    const autoShootBtn = document.querySelector('.auto-shoot')
-    autoShootBtn.addEventListener('click', e => {
-      let i = 0
-      let cell
-
-      while (i < 1000 && !grid.isOver()) {
-        cell = {
-          row: GridGenerator.random(0, 9),
-          col: GridGenerator.random(0, 9)
-        }
-        shootAtGrid(cell)
-        i++
-      }
-
-      renderer.render(grid, log)
-    })
   }
 
   const GRID_SIZE = 10
